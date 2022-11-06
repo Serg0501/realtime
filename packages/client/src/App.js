@@ -4,18 +4,17 @@ const socket = new WebSocket('ws://localhost:3000/');
 
 socket.onopen = function (event){
   console.dir(event);
-  alert('WS-Connection is open your mind!!!!')
-};
+  alert('WS-Connection is opened your mind!!!!!');
+}
 
 socket.onclose = function (event){
   console.dir(event);
-  alert('WS-Connection is close your mind!!!!')
-};
+  alert('WS-Connection is closed your mind!!!!');
+}
 
 socket.onmessage = function(event){
   console.dir(event.data);
-};
-
+}
 
 class App extends Component{
   constructor(props){
@@ -25,7 +24,7 @@ class App extends Component{
       msgText: '',
     };
   }
-  handleMsg = (e) => {
+  handleMsg = (e) => { 
     this.setState({msgText: e.target.value});
   };
   sendMsg = (e) => {
